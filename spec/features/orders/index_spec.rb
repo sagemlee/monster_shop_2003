@@ -41,6 +41,6 @@ RSpec.describe "Orders index page" do
       click_link "#{@order1.id}"
     end
 
-    expect(current_path).to eq("/profile/orders/#{@order1.id}")
+    expect(current_path).to eq("/orders/#{@order1.id}")
   end
 end

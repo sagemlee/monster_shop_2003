@@ -13,10 +13,10 @@
     <th>Quantity of Items</th>
     <th>Grand Total</th>
   </tr>
-    <% @orders.each do |order| %>
-      <section class = "order-<%=order.id%>">
+    <% @orders.each do |order|%>
+      <section class='order-<%=order.id%>'>
         <tr>
-          <td><p><%= link_to order.id, "/profile/orders/#{order.id}" %> </p></td>
+          <td><p><%= link_to order.id, "/orders/#{order.id}"%> </p></td>
           <td><p><%= order.name %> </p></td>
           <td><p><%= order.address %> </p></td>
           <td><p><%= order.city %> </p></td>
