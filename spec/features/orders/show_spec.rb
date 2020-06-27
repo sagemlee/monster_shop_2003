@@ -21,7 +21,7 @@ RSpec.describe "Orders show page" do
   end
 
   it "displays order information" do
-    visit "/profile/orders/#{@order1.id}"
+    visit "/orders/#{@order1.id}"
 
     expect(page).to have_content("#{@order1.id}")
     expect(page).to have_content("#{@order1.created_at}")
@@ -30,7 +30,7 @@ RSpec.describe "Orders show page" do
   end
 
   it "displays item information" do
-    visit "/profile/orders/#{@order1.id}"
+    visit "/orders/#{@order1.id}"
 
     within "#item-#{@pull_toy.id}" do
       expect(page).to have_content("#{@pull_toy.name}")
@@ -57,7 +57,7 @@ RSpec.describe "Orders show page" do
   it "shipped orders cannot be cancelled" do
     order3 = Order.create!(name: "name", address: "address", city: "city", state: "state", zip: 23455, user_id: @regular_user.id, status: "shipped")
 
-    visit "/profile/orders/#{order3.id}"
+    visit "/orders/#{order3.id}"
 
     expect(page).to_not have_content("Cancel Order")
   end

@@ -40,7 +40,7 @@ RSpec.describe("Order new") do
 
       new_order = Order.last
 
-      expect(current_path).to eq("/profile/orders/#{new_order.id}")
+      expect(current_path).to eq("/orders/#{new_order.id}")
 
       within '.shipping-address' do
         expect(page).to have_content(name)
@@ -119,11 +119,11 @@ RSpec.describe("Order new") do
 
       new_order = Order.last
 
-      expect(current_path).to eq("/profile/orders/#{new_order.id}")
+      expect(current_path).to eq("/orders/#{new_order.id}")
       expect(page).to have_content("Your order has been created")
 
       click_link ("Current Orders")
-      expect(current_path).to eq("/profile/orders")
+      expect(current_path).to eq("/orders")
 
       expect(page).to have_content("Current Orders")
       expect(page).to have_content("Bert")

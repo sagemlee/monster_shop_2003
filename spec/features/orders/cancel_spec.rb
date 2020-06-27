@@ -37,7 +37,7 @@ RSpec.describe "Orders show page, cancel button" do
     fill_in :password, with: @regular_user.password
     click_on "Login!"
 
-    visit "/profile/orders/#{@order1.id}"
+    visit "/orders/#{@order1.id}"
 
     click_on "Cancel Order"
   end

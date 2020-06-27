@@ -34,7 +34,7 @@ RSpec.describe "Admin view of user profile page" do
     ItemOrder.create!(order_id: order.id, price: 1.0, item_id: tire.id, quantity: 4)
     visit "admin/profile/#{@user.id}"
     click_link("My Orders")
-    expect(current_path).to eq('/profile/orders')
+    expect(current_path).to eq('/orders')
   end
 
 end

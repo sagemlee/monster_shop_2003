@@ -45,7 +45,7 @@
   <% end %>
 </table>
 <section id="currentorders">
-  <p><%= link_to "Current Orders", "/profile/orders"%></p>
+  <p><%= link_to "Current Orders", "/orders"%></p>
 </section>
 <section id="totalquantity">
   <p><%= @order.quantity_sum %></p>
@@ -63,5 +63,5 @@
   <p> <%= @order.status%></p>
 </section>
 <% if @order.status == "packaged" || @order.status == "pending" %>
-  <%= link_to "Cancel Order", "/profile/orders/#{@order.id}", method: :patch %>
+  <%= link_to "Cancel Order", "/orders/#{@order.id}", method: :patch %>
 <% end %>

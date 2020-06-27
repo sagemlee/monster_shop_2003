@@ -22,7 +22,7 @@ RSpec.describe "Orders index page" do
 
   it "displays every order user has made and order information" do
 
-    visit "/profile/orders"
+    visit "/orders"
 
     within ".order-#{@order1.id}" do
       expect(page).to have_link("#{@order1.id}")
@@ -35,7 +35,7 @@ RSpec.describe "Orders index page" do
   end
 
   it "links to order show page" do
-    visit "/profile/orders"
+    visit "/orders"
     
     within ".order-#{@order1.id}" do
       click_link "#{@order1.id}"

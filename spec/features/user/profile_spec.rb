@@ -124,6 +124,6 @@ RSpec.describe "User profile page" do
 
     expect(current_path).to eq('/profile')
     click_link("My Orders")
-    expect(current_path).to eq('/profile/orders')
+    expect(current_path).to eq('/orders')
   end
 end
